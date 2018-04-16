@@ -61,6 +61,27 @@ Une fois le modèle entraîné, ils arrivent à automatiser une partie de la mig
 Ce travail peut nous servir si l'on a migré BLCore et que l'on souhaite ensuite migrer les applications.
 Comme lui, nous travaillons sur la migration de librairies de langages différents.
 
+## Transformation de modèle
+
+La _transformation de modèle_ traite de la modification d'un modèle source vers un modèle cible. 
+
+L'article de Baki *et al.* [@baki2016multi] présente un processus de migration d'un modèle UML vers un modèle SQL.
+Pour faire la migration, les auteurs ont décidé d'utiliser des règles de transformation.
+Ces règles prennent en entrée le modèle UML et donne en sortie le SQL définit par les règles.
+Plutot que d'écrire les règles de migration à la main.
+Les auteurs ont décomposées ces règles en petites briques.
+Chaque brique peut correspondre soit à une condition à respectée pour que la règle soit validée, soit à un changement sur la sortie de la règle. 
+Ensuite, les auteurs ont développé un algorithme de programation génétique pouvant manipuler ces règles. 
+L'algorithme va, à partir d'exemples, apprendre les règles de transformation à appliquer pour faire la transformation du modèle. 
+Pour cela, il va modifier les petites briques composants les règles et analyser si le modèle en sortie resemble à 
+  celui explicité pour tout les exemples.
+Puis, il sera utilisé sur des vrais données. 
+Ce travail peut être utilisé dans mon projet. 
+En effet, je peux aussi effectuer la migration en utilisant un modèle de l'application source et un 
+  modèle de l'application cible. 
+Toutefois, la complexité d'un code source Java semble plus grande que celle d'un modèle UML.
+Il est possible que l'algorithme de programation génétique ne soit pas assez performant pour régler mon problème de manière satisfaisante.
+
 Aucun des papiers trouvés et cités ne peut nous aider réellement à migrer le framework BLCore ou les applications si on décide que dans le futur, on supprime BLCore, puisqu'Angular, contrairement à GWT n'est pas du Java.
 En revanche, si Berger-Levrault souhaite garder l'équivalent de BLCore dans le futur, alors ces travaux pourraient nous aider à migrer dans un deuxième temps les applications.
 
