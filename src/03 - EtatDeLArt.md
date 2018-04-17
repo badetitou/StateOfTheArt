@@ -4,8 +4,7 @@ La première étape de mon travail a été de le positionner par rapport à la l
 
 ## Migration de plateforme
 
-La _migration de plateforme_ traite de comment migrer une application d'un langage à un autre.
-On y aborde par exemple la migration de plateforme pour des interfaces graphiques.
+La _migration de plateforme_ traite de comment migrer une interfaces graphiques.
 
 En particulier, l'article de Samir *et al.* [@samir2007swing2script] dans lequel il est question de la migration de Swing vers Ajax.
 Les auteurs ont développé un outil appelé Swing2Script qui permet d'automatiser
@@ -21,7 +20,7 @@ Au vu de la taille des applications de Berger-Levrault ainsi que de l'impact de 
 
 La _migration de librairie_ présente des solutions sur comment changer de framework.
 
-Teyton  *et al.* [@teyton2013automatic] ont proposé un outil permettant d'extraire depuis des migrations déjà effectuées
+Teyton *et al.* [@teyton2013automatic] ont proposé un outil permettant d'extraire depuis des migrations déjà effectuées
   les correspondances entre les appels d'un framework avec ceux d'un autre.
 Pour cela, ils se basent sur les différences textuelles entre plusieurs versions d'un même projet.
 À cause du nombre de versions qu'un projet peut avoir, ils utilisent un algorithme
@@ -39,7 +38,7 @@ Son travail de recherche de correspondance entre certains morceaux de code
 En effet, je vais aussi devoir trouver les correspondances entre du code Java
   et du code Angular.
 
-Zhong  *et al.* [@zhong2010mining] ont voulu créer une approche visant à faire correspondre
+Zhong *et al.* [@zhong2010mining] ont voulu créer une approche visant à faire correspondre
   l'API[^api] d'un framework avec celui d'un autre, tous deux étant écrits dans des langages différents.
 Pour cela, ils ont développé une stratégie appelée MAM (Mining API Mapping) qui prendra en
   paramètres deux projets dans deux versions différentes.
@@ -77,7 +76,7 @@ Comme lui, nous travaillons sur la migration de librairies de langages différen
 
 ## Transformation de modèle vers modèle
 
-La _transformation de modèle_ traite de la modification d'un modèle source vers un modèle cible.
+La _transformation de modèle vers modèle_ traite de la modification d'un modèle source vers un modèle cible.
 
 L'article de Baki *et al.* [@baki2016multi] présente un processus de migration d'un modèle UML vers un modèle SQL.
 Pour faire la migration, les auteurs ont décidé d'utiliser des règles de transformation.
@@ -116,6 +115,18 @@ Le premier modèle proviendrait de l'application source, le second modèle respe
 J'ai donc la même problématique que les auteurs de passage d'un modèle à un autre.
 En définissant un méta-méta-modèle que respecterai le méta-modèle de départ de l'application source et un méta-modèle de destination,
   la méthodologie proposé par les auteurs devrait pouvoir résoudre, totalement ou partiellement, mon problème de migration.
+
+## Transformation de modèle vers texte
+
+La _transformation de modèle vers texte_ traite du passage d'un modèle source vers du texte.
+Le texte peut être du code source compilable ou non.
+
+L'article de Mukherjee *et al.* [@mukherjee2011automatic] présente un outil permettant de prendre en entrée les spécifications d'un programme et donne en sortie un programme utilisable.
+L'entrée est un fichier en XML et la sortie est un programme écrit en C ou en Java (en fonction du choix de l'utilisateur).
+Pour effectuer les transformations, les auteurs ont utilisé un système de règle de transformation.
+Je pourrai réutiliser ce travail si je passe par un modèle pour la migration.
+En effet, le fichier XML pris en entrée de l'outil des développeurs peut être assimilé à un modèle suivant un méta-modèle (définit dans l'article).
+Dans le cas où nous utilisons un modèle dans le cadre de la migration des applications de Berger-Levrault, ce travaille peut être assimiler au notre.
 
 ## Migration de langage
 
