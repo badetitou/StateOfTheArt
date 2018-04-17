@@ -81,16 +81,26 @@ En effet, je peux aussi effectuer la migration en utilisant un modèle de l'appl
 Toutefois, la complexité d'un code source Java semble plus grande que celle d'un modèle UML.
 Il est possible que l'algorithme de programmation génétique ne soit pas assez performant pour régler mon problème de manière satisfaisante.
 
-Falleri *et al.* [falleri2008metamodel] ont travaillé sur le passage d'un méta-modèle à un autre.
+Falleri *et al.* [@falleri2008metamodel] ont travaillé sur le passage d'un méta-modèle à un autre.
 C'est ce que l'on appelle l'alignement des méta-modèle.
 Pour cela, les auteurs ont utilisé l'algorithme de *Similarity Flooding*.
 Cet algorithme permet de trouver les similarités entre les deux graphe orientés et étiquetés aux arcs en entré du programme.
 Les auteurs ont proposé des solutions pour convertir un méta-modèle en graphe orientés et étiquetés aux arcs.
 Comme les auteurs, je peux décider d'effectuer la migration en passant par des modèles et méta-modèles.
-Une fois les meta-modèle et modèles créés, je pourrai utilisé l'algorithme *Similarity Flooding* utilisée dans l'article
+Une fois les méta-modèle et modèles créés, je pourrai utilisé l'algorithme *Similarity Flooding* utilisée dans l'article
   pour effectuer la migration.
 
-
+Wang *et al.* [@wang2017automatic] ont créé une méthodologie et un outil permettant de automatiquement faire la transformation d'un modèle vers un autre modèle.
+Leur outil se distingue en effectuant une migration qui se base sur une analyse syntaxique et sémantique.
+L'objectif de la méthodologie est d'effectuer la transformation d'un modèle vers un autre de manière itérative en modifiant le méta-modèle.
+Une condition d'utilisation contraignante décrite par les auteurs est la nécessité d'avoir
+  une méta-méta-modèle pour tous les méta-modèle intermédiaire.
+Les auteurs ont implémenté un méta-méta-modèle dans leur outil.
+Dans mon travail, une solution pour effectuer la migration serait d'utiliser des méta-modèle.
+Le premier modèle proviendrait de l'application source, le second modèle respecterait le méta-modèle de destination.
+J'ai donc la même problématique que les auteurs de passage d'un modèle à un autre.
+En définissant un méta-méta-modèle que respecterai le méta-modèle de départ de l'application source et un méta-modèle de destination,
+  la méthodologie proposé par les auteurs devrait pouvoir résoudre, totalement ou partiellement, mon problème de migration.
 
 Aucun des papiers trouvés et cités ne peut nous aider réellement à migrer le framework BLCore ou les applications si on décide que dans le futur, on supprime BLCore, puisqu'Angular, contrairement à GWT n'est pas du Java.
 En revanche, si Berger-Levrault souhaite garder l'équivalent de BLCore dans le futur, alors ces travaux pourraient nous aider à migrer dans un deuxième temps les applications.
