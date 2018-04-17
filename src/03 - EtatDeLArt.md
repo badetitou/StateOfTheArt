@@ -51,6 +51,20 @@ Cette approche ne peut pas m'aider à migrer BLCore,
   mais, si je migre quelques applications de Berger-Levrault,
   je pourrai réutiliser les stratégies employées par Zhong pour faciliter la migration d'autres applications.
 
+Nguyen *et al.* [@nguyen2014statistical] ont travaillé sur un outil, nommé StaMiner, permettant de mettre en
+  correspondance des API de framework écrit en Java, avec des API écrite en C#.
+L'apprentissage des correspondances utilisent des morceaux de code source et cible ayant le même comportement.
+Il se fait en trois étapes.
+
+1. Le Groum, qui consiste à représenter le code source sous la forme d'un graphe. On y retrouve les appels à des fonctions, des alternatives, des boucles, etc.
+2. L'extraction des séquences d'utilisation des différents éléments.
+3. L'alignement des séquences entre le résultat pour le code source et le code cible.
+
+Pour effectuer l'alignement, les auteurs ont utilisé des outils probabilistes sur les symbole et sur les séquences.
+Ce travail peut être utilisé pour la migration des applications de Berger-Levrault.
+En utilisant cet outil sur une application source, et un bout migration *fait à la main*.
+Je pourrai apprendre des règles de transformation à appliquer pour la migration.
+
 L'article de Phan *et al.* [@phan2017statistical] propose de faire correspondre des éléments de code du langage Java
   vers le langage C#.
 Plus précisément, ils ont développé un outil permettant de mettre en correspondance du code d'un langage utilisant
@@ -61,7 +75,7 @@ Une fois le modèle entraîné, ils arrivent à automatiser une partie de la mig
 Ce travail peut nous servir si l'on a migré BLCore et que l'on souhaite ensuite migrer les applications.
 Comme lui, nous travaillons sur la migration de librairies de langages différents.
 
-## Transformation de modèle
+## Transformation de modèle vers modèle
 
 La _transformation de modèle_ traite de la modification d'un modèle source vers un modèle cible.
 
@@ -103,9 +117,9 @@ J'ai donc la même problématique que les auteurs de passage d'un modèle à un 
 En définissant un méta-méta-modèle que respecterai le méta-modèle de départ de l'application source et un méta-modèle de destination,
   la méthodologie proposé par les auteurs devrait pouvoir résoudre, totalement ou partiellement, mon problème de migration.
 
-## Migration du code source
+## Migration de langage
 
-La *migration du code source* traite de la transformation du code source directement (*i.e.* sans passer par un modèle).
+La *migration de langage* traite de la transformation du code source directement (*i.e.* sans passer par un modèle).
 Pour cela, les auteurs crée des "règles" permettant de modifier le code source.
 
 Brant *et al.* [@brant2010extreme] ont écrit un compilateur utilisant un outil nommé SmaCC.
