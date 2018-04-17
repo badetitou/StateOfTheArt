@@ -16,7 +16,6 @@ Cependant, l'outil utilise une analyse dynamique de l'application pour détecter
 Au vu de la taille des applications de Berger-Levrault ainsi que de l'impact de l'utilisation d'une telle stratégie sur les utilisateurs,
   je ne pourrai pas utiliser la même stratégie.
 
-
 ## Migration de librairie
 
 La _migration de librairie_ présente des solutions sur comment changer de framework.
@@ -51,7 +50,7 @@ Cette approche ne peut pas m'aider à migrer BLCore,
   mais, si je migre quelques applications de Berger-Levrault,
   je pourrai réutiliser les stratégies employées par Zhong pour faciliter la migration d'autres applications.
 
-L'article de Phan  *et al.* [@phan2017statistical] propose de faire correspondre des éléments de code du langage Java
+L'article de Phan *et al.* [@phan2017statistical] propose de faire correspondre des éléments de code du langage Java
   vers le langage C#.
 Plus précisément, ils ont développé un outil permettant de mettre en correspondance du code d'un langage utilisant
   une ou plusieurs API vers un autre langage utilisant une ou plusieurs autres API prédéfinies.
@@ -63,28 +62,38 @@ Comme lui, nous travaillons sur la migration de librairies de langages différen
 
 ## Transformation de modèle
 
-La _transformation de modèle_ traite de la modification d'un modèle source vers un modèle cible. 
+La _transformation de modèle_ traite de la modification d'un modèle source vers un modèle cible.
 
 L'article de Baki *et al.* [@baki2016multi] présente un processus de migration d'un modèle UML vers un modèle SQL.
 Pour faire la migration, les auteurs ont décidé d'utiliser des règles de transformation.
 Ces règles prennent en entrée le modèle UML et donne en sortie le SQL définit par les règles.
 Plutot que d'écrire les règles de migration à la main.
 Les auteurs ont décomposées ces règles en petites briques.
-Chaque brique peut correspondre soit à une condition à respectée pour que la règle soit validée, soit à un changement sur la sortie de la règle. 
-Ensuite, les auteurs ont développé un algorithme de programation génétique pouvant manipuler ces règles. 
-L'algorithme va, à partir d'exemples, apprendre les règles de transformation à appliquer pour faire la transformation du modèle. 
-Pour cela, il va modifier les petites briques composants les règles et analyser si le modèle en sortie resemble à 
+Chaque brique peut correspondre soit à une condition à respectée pour que la règle soit validée, soit à un changement sur la sortie de la règle.
+Ensuite, les auteurs ont développé un algorithme de programmation génétique pouvant manipuler ces règles.
+L'algorithme va, à partir d'exemples, apprendre les règles de transformation à appliquer pour faire la transformation du modèle.
+Pour cela, il va modifier les petites briques composants les règles et analyser si le modèle en sortie ressemble à
   celui explicité pour tout les exemples.
-Puis, il sera utilisé sur des vrais données. 
-Ce travail peut être utilisé dans mon projet. 
-En effet, je peux aussi effectuer la migration en utilisant un modèle de l'application source et un 
-  modèle de l'application cible. 
+Puis, il sera utilisé sur des vrais données.
+Ce travail peut être utilisé dans mon projet.
+En effet, je peux aussi effectuer la migration en utilisant un modèle de l'application source et un
+  modèle de l'application cible.
 Toutefois, la complexité d'un code source Java semble plus grande que celle d'un modèle UML.
-Il est possible que l'algorithme de programation génétique ne soit pas assez performant pour régler mon problème de manière satisfaisante.
+Il est possible que l'algorithme de programmation génétique ne soit pas assez performant pour régler mon problème de manière satisfaisante.
+
+Falleri *et al.* [falleri2008metamodel] ont travaillé sur le passage d'un méta-modèle à un autre.
+C'est ce que l'on appelle l'alignement des méta-modèle.
+Pour cela, les auteurs ont utilisé l'algorithme de *Similarity Flooding*.
+Cet algorithme permet de trouver les similarités entre les deux graphe orientés et étiquetés aux arcs en entré du programme.
+Les auteurs ont proposé des solutions pour convertir un méta-modèle en graphe orientés et étiquetés aux arcs.
+Comme les auteurs, je peux décider d'effectuer la migration en passant par des modèles et méta-modèles.
+Une fois les meta-modèle et modèles créés, je pourrai utilisé l'algorithme *Similarity Flooding* utilisée dans l'article
+  pour effectuer la migration.
+
+
 
 Aucun des papiers trouvés et cités ne peut nous aider réellement à migrer le framework BLCore ou les applications si on décide que dans le futur, on supprime BLCore, puisqu'Angular, contrairement à GWT n'est pas du Java.
 En revanche, si Berger-Levrault souhaite garder l'équivalent de BLCore dans le futur, alors ces travaux pourraient nous aider à migrer dans un deuxième temps les applications.
 
 [^api]: API: Interface de programmation
 [^XUL]: XUL: XML-based User interface Language est un langage de description d’interfaces graphiques fondé sur XML créé dans le cadre du projet Mozilla
-
