@@ -6,6 +6,7 @@ La première étape de mon travail a été de le positionner par rapport à la l
 
 La _migration de plateforme_ traite de comment migrer une application d'un langage à un autre.
 On y aborde par exemple la migration de plateforme pour des interfaces graphiques.
+
 En particulier, l'article de Samir *et al.* [@samir2007swing2script] dans lequel il est question de la migration de Swing vers Ajax.
 Les auteurs ont développé un outil appelé Swing2Script qui permet d'automatiser
   la migration d'application Java-Swing en une application web Ajax.
@@ -101,6 +102,18 @@ Le premier modèle proviendrait de l'application source, le second modèle respe
 J'ai donc la même problématique que les auteurs de passage d'un modèle à un autre.
 En définissant un méta-méta-modèle que respecterai le méta-modèle de départ de l'application source et un méta-modèle de destination,
   la méthodologie proposé par les auteurs devrait pouvoir résoudre, totalement ou partiellement, mon problème de migration.
+
+## Migration du code source
+
+La *migration du code source* traite de la transformation du code source directement (*i.e.* sans passer par un modèle).
+
+Brant *et al.* [@brant2010extreme] ont écrit un compilateur utilisant un outil nommé SmaCC.
+SmaCC est un générateur d'analyseur pour Smalltalk.
+Ils ont aussi utilisé le SmaCC Transformation Toolkit qui permet de définir des règles de transformations qui seront utilisées par SmaCC.
+Ainsi, les auteurs sont parvenues à migrer une application Delphi de 1,5 million de ligne de code en C#.
+Comme les auteurs, je veux effectuer la migration du code source d'une application.
+Mon cas se différencie par les langages source et cible.
+Ce travaille peut me servir si nous souhaitons effectuer la migration sans passer par un modèle intermédiaire.
 
 Aucun des papiers trouvés et cités ne peut nous aider réellement à migrer le framework BLCore ou les applications si on décide que dans le futur, on supprime BLCore, puisqu'Angular, contrairement à GWT n'est pas du Java.
 En revanche, si Berger-Levrault souhaite garder l'équivalent de BLCore dans le futur, alors ces travaux pourraient nous aider à migrer dans un deuxième temps les applications.
