@@ -106,6 +106,7 @@ En définissant un méta-méta-modèle que respecterai le méta-modèle de dépa
 ## Migration du code source
 
 La *migration du code source* traite de la transformation du code source directement (*i.e.* sans passer par un modèle).
+Pour cela, les auteurs crée des "règles" permettant de modifier le code source.
 
 Brant *et al.* [@brant2010extreme] ont écrit un compilateur utilisant un outil nommé SmaCC.
 SmaCC est un générateur d'analyseur pour Smalltalk.
@@ -114,6 +115,15 @@ Ainsi, les auteurs sont parvenues à migrer une application Delphi de 1,5 millio
 Comme les auteurs, je veux effectuer la migration du code source d'une application.
 Mon cas se différencie par les langages source et cible.
 Ce travaille peut me servir si nous souhaitons effectuer la migration sans passer par un modèle intermédiaire.
+
+Un des problème de la migration du code source est la définition des règles.
+Newman *et al.* [@newman2017simplifying] ont proposé un outil facilitant la création de règle de transformation.
+Pour cela, l'outil va "normaliser" le code source en entré et essayer de le simplifier.
+Ainsi, les auteurs arrivent à réduire le nombre de règles de transformations à écrire et leurs complexités.
+Dans le cas de migration de Berger-Levrault.
+J'aurai à gérer les multiples manières dont les fonctionnalités seront écrites.
+La normalisation du code source pourra simplifier l'écriture des règles de transformation ou
+  les règles permettant de créer un modèle.
 
 Aucun des papiers trouvés et cités ne peut nous aider réellement à migrer le framework BLCore ou les applications si on décide que dans le futur, on supprime BLCore, puisqu'Angular, contrairement à GWT n'est pas du Java.
 En revanche, si Berger-Levrault souhaite garder l'équivalent de BLCore dans le futur, alors ces travaux pourraient nous aider à migrer dans un deuxième temps les applications.
