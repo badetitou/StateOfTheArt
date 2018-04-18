@@ -16,6 +16,14 @@ Cependant, l'outil utilise une analyse dynamique de l'application pour détecter
 Au vu de la taille des applications de Berger-Levrault ainsi que de l'impact de l'utilisation d'une telle stratégie sur les utilisateurs,
   je ne pourrai pas utiliser la même stratégie.
 
+Morgado *et al.* [@morgado2011reverse] ont créé un outil permettant d'extraire les différents composants d'une interface graphique ainsi que les changements qui s'opèrent lorsque l'on effectue une action sur un composant.
+Pour cela, les auteurs ont utilisé une stratégie de recherche dynamique.
+Une fois lancé sur une interface en cours d'exécution, le logiciel va détecter tous les composants graphiques.
+Puis, il va exécuter des cliques sur les composants de l'interface et détecter les modifications apportées à cette dernière.
+Comme Berger-levrault souhaite conserver la même interface graphique,
+  je vais aussi avoir besoin d'extraire la structure de l'interface actuelle.
+L'outil développait par les auteurs peut peut-être s'appliquer à notre problématique ou nous guider pour la création d'une solution.
+
 ## Migration de librairie
 
 La _migration de librairie_ présente des solutions sur comment changer de framework.
