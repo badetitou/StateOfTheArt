@@ -116,6 +116,19 @@ J'ai donc la même problématique que les auteurs de passage d'un modèle à un 
 En définissant un méta-méta-modèle que respecterai le méta-modèle de départ de l'application source et un méta-modèle de destination,
   la méthodologie proposé par les auteurs devrait pouvoir résoudre, totalement ou partiellement, mon problème de migration.
 
+Fleurey *et al.* [@fleurey2007model] ont travaillé sur la modernisation et la migration de logiciel au sein du entreprise d'informatique.
+Ils ont développé un logiciel permettant de semi-automatiser la migration des applications de l'entreprise.
+Pour cela, ils ont utilisé la transformation de modèle sur trois modèles.
+La migration se passe en quatre étapes.
+
+1. Ils génèrent un modèle de l'application à migrer.
+2. Ils transforment ce modèle en un "modèle pivot". Ce dernier contient la structure des données, les actions et algorithmes, l'interface graphique et la navigation dans l'application.
+3. Ils transforment le modèle pivot en un modèle respectant le méta-modèle du langage cible.
+4. Ils génèrent le code source final de l'application.
+
+Comme les auteurs, je vais devoir faire la migration d'une application et je vais devoir conserver structure de données, actions, interface graphique et navigation dans l'application.s
+Mon travail peut donc s'inspirer de celui proposé par les auteurs si nous souhaitons utiliser les modèles pour effectuer la migration.
+
 ## Transformation de modèle vers texte
 
 La _transformation de modèle vers texte_ traite du passage d'un modèle source vers du texte.
