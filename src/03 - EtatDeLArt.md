@@ -63,7 +63,7 @@ Pour effectuer l'alignement, les auteurs ont utilisé des outils probabilistes s
 Ce travail peut être utilisé pour la migration des applications de Berger-Levrault.
 En utilisant cet outil sur une application source et un bout migration *fait à la main*, je pourrai apprendre des règles de transformation à appliquer sur la migration.
 
-L'article de Phan *et al.* [@phan2017statistical] propose de faire correspondre des éléments de code du langage Java
+L'article de Phan *et al.* [@phan2017statistical] décrit une manière de faire correspondre des éléments de code du langage Java
   vers le langage C#.
 Plus précisément, ils ont développé un outil permettant de mettre en correspondance du code d'un langage utilisant
   une ou plusieurs API vers un autre langage utilisant une ou plusieurs autres API prédéfinies.
@@ -72,6 +72,13 @@ Puis, ils utilisent une machine statistique de traduction automatique pour faire
 Une fois le modèle entraîné, ils arrivent à automatiser une partie de la migration.
 Ce travail peut nous servir si l'on a migré BLCore et que l'on souhaite ensuite migrer les applications.
 Comme lui, nous travaillons sur la migration de librairies de langages différents.
+
+Chen *et al.* [@chen2016mining] ont développé un outil permettant de trouver des librairies similaires à une autre.
+Pour cela, les auteurs ont miné les tags des questions de Stack Overflow.
+Avec ces informations, ils ont pu mettre en relation des langages et leurs libraries ainsi que des équivalences entre librairies de langage différent.
+Pour la migration de Java/GWT vers Angular, il est possible que nous ayons besoin de changer de librairie (qui n'est pas BLCore).
+Plutôt que de récrire la librairie, la recherche d'une autre librairie permettant de résoudre les même problème peut être une solution.
+C'est dans ce contexte que le travail des auteurs peut guider notre recherche de librairie en mettant faisant correspondre les anciennes librairies utilisées par les applications de Berger-Levrault avec d'autre compatible utilisable avec Angular.
 
 ## Transformation de modèle vers modèle
 
