@@ -126,8 +126,18 @@ La migration se passe en quatre étapes.
 3. Ils transforment le modèle pivot en un modèle respectant le méta-modèle du langage cible.
 4. Ils génèrent le code source final de l'application.
 
-Comme les auteurs, je vais devoir faire la migration d'une application et je vais devoir conserver structure de données, actions, interface graphique et navigation dans l'application.s
+Comme les auteurs, je vais devoir faire la migration d'une application et je vais devoir conserver structure de données, actions, interface graphique et navigation dans l'application.
 Mon travail peut donc s'inspirer de celui proposé par les auteurs si nous souhaitons utiliser les modèles pour effectuer la migration.
+
+L'article de Garcés *et al.* [@garces2017white] décrit les trois étapes que les auteurs ont suivi pour effectuer une migration d'ancien code.
+
+1. L'analyse de l'ancien code source pour créer un modèle de l'application suivant un méta-modèle. Ce premier modèle est proche de la technologie de départ.
+2. La transformation de ce modèle vers un nouveau modèle plus abstrait.
+3. La génération du nouveau code source depuis le dernier modèle.
+
+Comme pour l'article, le travail de migration de Berger-Levrault peut se faire en utilisant des modèle et méta-modèle.
+De plus, les auteurs ont travaillé sur une migration d'interface graphique ce qui est aussi notre besoin.
+Nous pourrions donc réutiliser des outils ou résultats de ce travail dans notre cas.
 
 ## Transformation de modèle vers texte
 
