@@ -16,6 +16,14 @@ Cependant, l'outil utilise une analyse dynamique de l'application pour détecter
 Au vu de la taille des applications de Berger-Levrault ainsi que de l'impact de l'utilisation d'une telle stratégie sur les utilisateurs,
   je ne pourrai pas utiliser la même stratégie.
 
+L'article de Staiger [@staiger2007reverse] présente un outil d'analyse statique de code source en C qui permet d'extraire l'interface graphique générée par le programme.
+Pour cela, l'outil va rechercher les constructeurs de composant graphique dans le code et leurs appellent.
+Il va ensuite "suivre" les pointeurs (C) pour detecter les ajouts de composants dans d'autres composants.
+Ainsi, il arrive à créer un modèle de l'interface graphique avec l'ensemble des widgets.
+L'outil permet aussi de récupérer les événements liés aux composants détectés.
+Dans la cas d'utilisation d'un modèle pour la migration des applications de Berger-Levrault,
+  ce travail peut nous permettre d'extraire le modèle contenant les informations vis-à-vis de la représentation graphique de l'application.
+
 Morgado *et al.* [@morgado2011reverse] ont créé un outil permettant d'extraire les différents composants d'une interface graphique ainsi que les changements qui s'opèrent lorsque l'on effectue une action sur un composant.
 Pour cela, les auteurs ont utilisé une stratégie de recherche dynamique.
 Une fois lancé sur une interface en cours d'exécution, le logiciel va détecter tous les composants graphiques.
