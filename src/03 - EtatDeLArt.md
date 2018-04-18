@@ -4,7 +4,7 @@ La première étape de mon travail a été de le positionner par rapport à la l
 
 ## Migration de plateforme
 
-La _migration de plateforme_ traite de comment migrer une interfaces graphiques.
+La _migration de plateforme_ traite de comment migrer une interface graphique.
 
 En particulier, l'article de Samir *et al.* [@samir2007swing2script] dans lequel il est question de la migration de Swing vers Ajax.
 Les auteurs ont développé un outil appelé Swing2Script qui permet d'automatiser
@@ -59,10 +59,9 @@ Il se fait en trois étapes.
 2. L'extraction des séquences d'utilisation des différents éléments.
 3. L'alignement des séquences entre le résultat pour le code source et le code cible.
 
-Pour effectuer l'alignement, les auteurs ont utilisé des outils probabilistes sur les symbole et sur les séquences.
+Pour effectuer l'alignement, les auteurs ont utilisé des outils probabilistes sur les symboles et sur les séquences.
 Ce travail peut être utilisé pour la migration des applications de Berger-Levrault.
-En utilisant cet outil sur une application source, et un bout migration *fait à la main*.
-Je pourrai apprendre des règles de transformation à appliquer pour la migration.
+En utilisant cet outil sur une application source et un bout migration *fait à la main*, je pourrai apprendre des règles de transformation à appliquer sur la migration.
 
 L'article de Phan *et al.* [@phan2017statistical] propose de faire correspondre des éléments de code du langage Java
   vers le langage C#.
@@ -81,14 +80,14 @@ La _transformation de modèle vers modèle_ traite de la modification d'un modè
 L'article de Baki *et al.* [@baki2016multi] présente un processus de migration d'un modèle UML vers un modèle SQL.
 Pour faire la migration, les auteurs ont décidé d'utiliser des règles de transformation.
 Ces règles prennent en entrée le modèle UML et donne en sortie le SQL définit par les règles.
-Plutot que d'écrire les règles de migration à la main.
-Les auteurs ont décomposées ces règles en petites briques.
-Chaque brique peut correspondre soit à une condition à respectée pour que la règle soit validée, soit à un changement sur la sortie de la règle.
+Plutôt que d'écrire les règles de migration à la main.
+Les auteurs ont décomposé ces règles en petites briques.
+Chaque brique peut correspondre soit à une condition à respecter pour que la règle soit validée, soit à un changement sur la sortie de la règle.
 Ensuite, les auteurs ont développé un algorithme de programmation génétique pouvant manipuler ces règles.
-L'algorithme va, à partir d'exemples, apprendre les règles de transformation à appliquer pour faire la transformation du modèle.
+L'algorithme va, à partir d'exemples, apprendre les règles de transformation à appliquer afin d'effectuer la transformation du modèle.
 Pour cela, il va modifier les petites briques composants les règles et analyser si le modèle en sortie ressemble à
-  celui explicité pour tout les exemples.
-Puis, il sera utilisé sur des vrais données.
+  celui explicité pour tous les exemples.
+Puis, il sera utilisé sur de vrais données.
 Ce travail peut être utilisé dans mon projet.
 En effet, je peux aussi effectuer la migration en utilisant un modèle de l'application source et un
   modèle de l'application cible.
@@ -101,10 +100,10 @@ Pour cela, les auteurs ont utilisé l'algorithme de *Similarity Flooding*.
 Cet algorithme permet de trouver les similarités entre les deux graphe orientés et étiquetés aux arcs en entré du programme.
 Les auteurs ont proposé des solutions pour convertir un méta-modèle en graphe orientés et étiquetés aux arcs.
 Comme les auteurs, je peux décider d'effectuer la migration en passant par des modèles et méta-modèles.
-Une fois les méta-modèle et modèles créés, je pourrai utilisé l'algorithme *Similarity Flooding* utilisée dans l'article
+Une fois les méta-modèle et modèles créés, je pourrai utiliser l'algorithme *Similarity Flooding* utilisée dans l'article
   pour effectuer la migration.
 
-Wang *et al.* [@wang2017automatic] ont créé une méthodologie et un outil permettant de automatiquement faire la transformation d'un modèle vers un autre modèle.
+Wang *et al.* [@wang2017automatic] ont créé une méthodologie et un outil permettant d'automatiquement faire la transformation d'un modèle vers un autre modèle.
 Leur outil se distingue en effectuant une migration qui se base sur une analyse syntaxique et sémantique.
 L'objectif de la méthodologie est d'effectuer la transformation d'un modèle vers un autre de manière itérative en modifiant le méta-modèle.
 Une condition d'utilisation contraignante décrite par les auteurs est la nécessité d'avoir
@@ -114,9 +113,9 @@ Dans mon travail, une solution pour effectuer la migration serait d'utiliser des
 Le premier modèle proviendrait de l'application source, le second modèle respecterait le méta-modèle de destination.
 J'ai donc la même problématique que les auteurs de passage d'un modèle à un autre.
 En définissant un méta-méta-modèle que respecterai le méta-modèle de départ de l'application source et un méta-modèle de destination,
-  la méthodologie proposé par les auteurs devrait pouvoir résoudre, totalement ou partiellement, mon problème de migration.
+  la méthodologie proposée par les auteurs devrait pouvoir résoudre, totalement ou partiellement, mon problème de migration.
 
-Fleurey *et al.* [@fleurey2007model] ont travaillé sur la modernisation et la migration de logiciel au sein du entreprise d'informatique.
+Fleurey *et al.* [@fleurey2007model] ont travaillé sur la modernisation et la migration de logiciel au sein d'une entreprise d'informatique.
 Ils ont développé un logiciel permettant de semi-automatiser la migration des applications de l'entreprise.
 Pour cela, ils ont utilisé la transformation de modèle sur trois modèles.
 La migration se passe en quatre étapes.
@@ -129,13 +128,13 @@ La migration se passe en quatre étapes.
 Comme les auteurs, je vais devoir faire la migration d'une application et je vais devoir conserver structure de données, actions, interface graphique et navigation dans l'application.
 Mon travail peut donc s'inspirer de celui proposé par les auteurs si nous souhaitons utiliser les modèles pour effectuer la migration.
 
-L'article de Garcés *et al.* [@garces2017white] décrit les trois étapes que les auteurs ont suivi pour effectuer une migration d'ancien code.
+L'article de Garcés *et al.* [@garces2017white] décrit les trois étapes que les auteurs ont suivies pour effectuer une migration d'anciens codes.
 
 1. L'analyse de l'ancien code source pour créer un modèle de l'application suivant un méta-modèle. Ce premier modèle est proche de la technologie de départ.
 2. La transformation de ce modèle vers un nouveau modèle plus abstrait.
 3. La génération du nouveau code source depuis le dernier modèle.
 
-Comme pour l'article, le travail de migration de Berger-Levrault peut se faire en utilisant des modèle et méta-modèle.
+Comme pour l'article, le travail de migration de Berger-Levrault peut se faire en utilisant des modèles et méta-modèles.
 De plus, les auteurs ont travaillé sur une migration d'interface graphique ce qui est aussi notre besoin.
 Nous pourrions donc réutiliser des outils ou résultats de ce travail dans notre cas.
 
@@ -155,17 +154,17 @@ Nous pourrions aussi être amené à utiliser un système de règle pour faire l
 ## Migration de langage
 
 La *migration de langage* traite de la transformation du code source directement (*i.e.* sans passer par un modèle).
-Pour cela, les auteurs crée des "règles" permettant de modifier le code source.
+Pour cela, les auteurs créent des "règles" permettant de modifier le code source.
 
 Brant *et al.* [@brant2010extreme] ont écrit un compilateur utilisant un outil nommé SmaCC.
 SmaCC est un générateur d'analyseur pour Smalltalk.
 Ils ont aussi utilisé le SmaCC Transformation Toolkit qui permet de définir des règles de transformations qui seront utilisées par SmaCC.
-Ainsi, les auteurs sont parvenues à migrer une application Delphi de 1,5 million de ligne de code en C#.
+Ainsi, les auteurs sont parvenues à migrer une application Delphi de 1,5 million de lignes de code en C#.
 Comme les auteurs, je veux effectuer la migration du code source d'une application.
 Mon cas se différencie par les langages source et cible.
-Ce travaille peut me servir si nous souhaitons effectuer la migration sans passer par un modèle intermédiaire.
+Ce travail peut me servir si nous souhaitons effectuer la migration sans passer par un modèle intermédiaire.
 
-Un des problème de la migration du code source est la définition des règles.
+Un des problèmes de la migration du code source est la définition des règles.
 Newman *et al.* [@newman2017simplifying] ont proposé un outil facilitant la création de règle de transformation.
 Pour cela, l'outil va "normaliser" le code source en entré et essayer de le simplifier.
 Ainsi, les auteurs arrivent à réduire le nombre de règles de transformations à écrire et leurs complexités.
