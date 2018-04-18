@@ -126,7 +126,8 @@ L'entrée est un fichier en XML et la sortie est un programme écrit en C ou en 
 Pour effectuer les transformations, les auteurs ont utilisé un système de règle de transformation.
 Je pourrai réutiliser ce travail si je passe par un modèle pour la migration.
 En effet, le fichier XML pris en entrée de l'outil des développeurs peut être assimilé à un modèle suivant un méta-modèle (définit dans l'article).
-Dans le cas où nous utilisons un modèle dans le cadre de la migration des applications de Berger-Levrault, ce travaille peut être assimiler au notre.
+Dans le cas où nous utilisons un modèle dans le cadre de la migration des applications de Berger-Levrault.
+Nous pourrions aussi être amené à utiliser un système de règle pour faire la migration du modèle au code source.
 
 ## Migration de langage
 
