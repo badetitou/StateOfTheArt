@@ -28,9 +28,16 @@ Morgado *et al.* [@morgado2011reverse] ont créé un outil permettant d'extraire
 Pour cela, les auteurs ont utilisé une stratégie de recherche dynamique.
 Une fois lancé sur une interface en cours d'exécution, le logiciel va détecter tous les composants graphiques.
 Puis, il va exécuter des cliques sur les composants de l'interface et détecter les modifications apportées à cette dernière.
-Comme Berger-levrault souhaite conserver la même interface graphique,
+Comme Berger-Levrault souhaite conserver la même interface graphique,
   je vais aussi avoir besoin d'extraire la structure de l'interface actuelle.
 L'outil développait par les auteurs peut peut-être s'appliquer à notre problématique ou nous guider pour la création d'une solution.
+
+L'article de Shah *et al.* [@shah2011reverse] présente un logiciel capable d'extraire l'interface graphique d'une application java pendant l'execution.
+Le logiciel récupère dans la mémoire de l'ordinateur l'architecture de l'interface graphique avec la composition des widgets.
+De cette manière, les auteurs arrivent à concevoir, pour chaque "écran" de l'application, un modèle contenant les informations sur l'interface graphique.
+C'est à dire, les différents widgets, leurs propriétés, la composition d'un widget avec un autre (ex: un panel qui contient du text, un autre panel et un bouton).
+Comme les auteurs, la migration des applications de Berger-Levrault peut nécessiter que l'on extrait les interfaces graphiques des logiciels.
+La stratégie d'extraction présenté dans l'article peut guider notre travail.
 
 ## Migration de librairie
 
