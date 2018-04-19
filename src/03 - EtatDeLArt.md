@@ -39,6 +39,17 @@ C'est à dire, les différents widgets, leurs propriétés, la composition d'un 
 Comme les auteurs, la migration des applications de Berger-Levrault peut nécessiter que l'on extrait les interfaces graphiques des logiciels.
 La stratégie d'extraction présenté dans l'article peut guider notre travail.
 
+Sánchez Ramón *et al.* [@sanchez2010model] ont développé une solution permettant d'extraire depuis un ancien logiciel son interface graphique.
+Les auteurs importent cette interface dans un modèle qu'ils ont créé.
+Leur solution permet ensuite d'extraire des informations de leur modèle.
+Pour cela, l'outil va délimiter pour chaque widget la taille de sa représentation visuel.
+Il connaît donc, la position, la largeur et la hauteur de chaque widget.
+Les widgets sont alors contenu ou non dans un autre en fonction de leurs positions les uns avec les autres.
+Exemple : un widget qui est à l'intérieur d'un autre visuellement est un contenu par cet autre.
+Ce travail se rapproche de celui que nous devons effectuer pour la migration des applications de Berger-Levrault.
+Extraire l'interface graphique pour ensuite la migrer fait aussi partie des tâches essentielles de notre migration.
+Le modèle représentant l'interface graphique utilisé par les auteurs peut être un point de départ à notre travail d'extraction.
+
 ## Migration de librairie
 
 La _migration de librairie_ présente des solutions sur comment changer de framework.
