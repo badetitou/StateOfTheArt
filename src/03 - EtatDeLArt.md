@@ -214,6 +214,18 @@ J'aurai à gérer les multiples manières dont les fonctionnalités seront écri
 La normalisation du code source pourra simplifier l'écriture des règles de transformation ou
   les règles permettant de créer un modèle.
 
+Rolim *et al.* [@rolim2017learning] ont créé un outil qui apprend des règles de transformation de programme à partir d'exemple.
+Pour cela, les auteurs ont défini un DSL[^DSL] permettant d'exprimer les modification faîte sur l'AST[^ast] d'un programme.
+Ensuite, à partir d'une base d'exemple de transformation, l'outil recherche les règles de transformation entre les fichiers d'entrés des exemples
+  et ceux de sorties.
+Une fois les règles trouvées et écrites dans le DSL prédéfini, l'outil prend en entré un bout de code et donne en sortie le résultat des transformation.
+Ce travail peut nous servir pour la migration des applications de Berger-Levrault.
+En effet, nous pouvons imaginer faire la migration de tout ou partie des applications en utilisant un tel outil.
+De plus, on peut imaginer un outil qui apprendrai au fur et à mesure des développement des développeur et qui les
+  conseillerez dans un second temps sur d'autre développement avec les même problématiques déjà résolu.
+Ou encore, l'outil pourrait servir de "guide" pour les nouveaux développeurs participants à la migration ou 
+  au développement courant des applications.
+
 Aucun des papiers trouvés et cités ne peut nous aider réellement à migrer le framework BLCore ou les applications si on décide que dans le futur, on supprime BLCore, puisqu'Angular, contrairement à GWT n'est pas du Java.
 En revanche, si Berger-Levrault souhaite garder l'équivalent de BLCore dans le futur, alors ces travaux pourraient nous aider à migrer dans un deuxième temps les applications.
 
