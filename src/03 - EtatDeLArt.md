@@ -53,11 +53,19 @@ Le modèle représentant l'interface graphique utilisé par les auteurs peut êt
 Silvia *et al.* [@silva2010guisurfer] ont créé un logiciel nommé "GUISurfer".
 Ce logiciel permet d'extraire une interface graphique d'un code source et de le convertir en un modèle.
 Le code source peut être du java avec le framework[^framework] Swing.
-GUISurfer parcourt l'AST[^ast] de l'application source pour détecter les composants qu'on lui donnés en paramètre.
+GUISurfer parcourt l'AST[^ast] de l'application source pour détecter les composants qu'on lui a donné en paramètre.
 On peut donc avoir en sortie un modèle complet de l'interface graphique ou ne contenant que les actions (entrée, clique, etc.).
 L'article précise qu'un travail sur l'extraction d'interface GWT est en cours.
-Pour la migration des application de Berger-Levrault, je vais devoir extraire l'interface graphique des applications écrites avec GWT.
+Pour la migration des applications de Berger-Levrault, je vais devoir extraire l'interface graphique des applications écrites avec GWT.
 Le logiciel "GUISurfer" peut peut-être me permettre d'extraire un modèle de l'interface, dans un premier temps sans les spécificités de Berger-Levrault.
+
+L'article de Gotti *et al.* [@gotti2016java] présente une méthodologie pour extraire les composants d'une interface graphique et leurs relations.
+Pour cela, les auteurs construisent plusieurs modèles.
+Le passage entre les modèles se fait grâce à des transformations QVT[^QVT].
+Les auteurs ont appliqué leur projet sur des programmes java utilisant le framework graphique Swing.
+Dans le cadre de la migration des applications de Berger-Levrault, l'extraction des composants graphiques
+  et leurs relations peut être nécessaire.
+En modifiant le travail des auteurs, je pourrai le réutiliser dans le cas de l'extraction de composant GWT.
 
 ## Migration de librairie
 
