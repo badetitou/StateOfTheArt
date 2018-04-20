@@ -26,7 +26,7 @@ Dans la cas d'utilisation d'un modèle pour la migration des applications de Ber
 
 Morgado *et al.* [@morgado2011reverse] ont créé un outil permettant d'extraire les différents composants d'une interface graphique ainsi que les changements qui s'opèrent lorsque l'on effectue une action sur un composant.
 Pour cela, les auteurs ont utilisé une stratégie de recherche dynamique.
-Une fois lancé sur une interface en cours d'exécution, le logiciel va détecter tous les composants graphiques.
+Une fois lancée sur une interface en cours d'exécution, le logiciel va détecter tous les composants graphiques.
 Puis, il va exécuter des cliques sur les composants de l'interface et détecter les modifications apportées à cette dernière.
 Comme Berger-Levrault souhaite conserver la même interface graphique,
   je vais aussi avoir besoin d'extraire la structure de l'interface actuelle.
@@ -35,16 +35,16 @@ L'outil développait par les auteurs peut peut-être s'appliquer à notre probl�
 L'article de Shah *et al.* [@shah2011reverse] présente un logiciel capable d'extraire l'interface graphique d'une application java pendant l'execution.
 Le logiciel récupère dans la mémoire de l'ordinateur l'architecture de l'interface graphique avec la composition des widgets.
 De cette manière, les auteurs arrivent à concevoir, pour chaque "écran" de l'application, un modèle contenant les informations sur l'interface graphique.
-C'est à dire, les différents widgets, leurs propriétés, la composition d'un widget avec un autre (ex: un panel qui contient du text, un autre panel et un bouton).
+C'est-à-dire, les différents widgets, leurs propriétés, la composition d'un widget avec un autre (ex: un panel qui contient du text, un autre panel et un bouton).
 Comme les auteurs, la migration des applications de Berger-Levrault peut nécessiter que l'on extrait les interfaces graphiques des logiciels.
-La stratégie d'extraction présenté dans l'article peut guider notre travail.
+La stratégie d'extraction présentée dans l'article peut guider notre travail.
 
 Sánchez Ramón *et al.* [@sanchez2010model] ont développé une solution permettant d'extraire depuis un ancien logiciel son interface graphique.
 Les auteurs importent cette interface dans un modèle qu'ils ont créé.
 Leur solution permet ensuite d'extraire des informations de leur modèle.
-Pour cela, l'outil va délimiter pour chaque widget la taille de sa représentation visuel.
+Pour cela, l'outil va délimiter pour chaque widget la taille de sa représentation visuelle.
 Il connaît donc, la position, la largeur et la hauteur de chaque widget.
-Les widgets sont alors contenu ou non dans un autre en fonction de leurs positions les uns avec les autres.
+Les widgets sont alors contenus ou non dans un autre en fonction de leurs positions les uns avec les autres.
 Exemple : un widget qui est à l'intérieur d'un autre visuellement est un contenu par cet autre.
 Ce travail se rapproche de celui que nous devons effectuer pour la migration des applications de Berger-Levrault.
 Extraire l'interface graphique pour ensuite la migrer fait aussi partie des tâches essentielles de notre migration.
@@ -53,7 +53,7 @@ Le modèle représentant l'interface graphique utilisé par les auteurs peut êt
 Silvia *et al.* [@silva2010guisurfer] ont créé un logiciel nommé "GUISurfer".
 Ce logiciel permet d'extraire une interface graphique d'un code source et de le convertir en un modèle.
 Le code source peut être du java avec le framework[^framework] Swing.
-GUISurfer parcourt l'AST[^ast] de l'application source pour détecter les composants qu'on lui a donné en paramètre.
+GUISurfer parcourt l'AST[^ast] de l'application source pour détecter les composants qu'on lui a donnés en paramètre.
 On peut donc avoir en sortie un modèle complet de l'interface graphique ou ne contenant que les actions (entrée, clique, etc.).
 L'article précise qu'un travail sur l'extraction d'interface GWT est en cours.
 Pour la migration des applications de Berger-Levrault, je vais devoir extraire l'interface graphique des applications écrites avec GWT.
@@ -64,12 +64,12 @@ Pour cela, les auteurs construisent plusieurs modèles.
 Le passage entre les modèles se fait grâce à des transformations QVT[^QVT].
 Les auteurs ont appliqué leur projet sur des programmes java utilisant le framework graphique Swing.
 Dans le cadre de la migration des applications de Berger-Levrault, l'extraction des composants graphiques
-  et leurs relations peut être nécessaire.
+  et de leurs relations peut être nécessaire.
 En modifiant le travail des auteurs, je pourrai le réutiliser dans le cas de l'extraction de composant GWT.
 
 Memon *et al.* [@MemonWCRE2003] ont développé un logiciel nommé "GUI Ripper".
 Cet outil permet d'extraire d'un logiciel java ou MS Windows les différents composants visuels.
-L'outil fait une recherche dynamique des composants instanciés durant l'execution du programme.
+L'outil fait une recherche dynamique des composants instanciés durant l'exécution du programme.
 Les auteurs obtiennent un modèle de l'application qu'ils vont ensuite pouvoir utiliser pour générer des tests.
 L'extraction de composants visuels est aussi une tâche importante pour mon projet avec Berger-Levrault.
 Cependant, la recherche dynamique proposée par les auteurs ne semblent pas applicable en l'état dans notre cas
@@ -78,7 +78,7 @@ Cependant, on peut imaginer implémenter l'algorithme de GUI Ripper en JavaScrip
   pendant l'exécution du script dans le navigateur web.
 
 L'article de Lelli *et al.* [@lelli2016automatic] propose un outil permettant de détecter les composants graphiques pouvant faire plus de deux actions.
-L'outil, qui est une extension d'eclipse, va tout d'abord faire une analyse static du code source.
+L'outil, qui est une extension d'eclipse, va tout d'abord faire une analyse statique du code source.
 Cela lui permet de repérer les différents widgets.
 Puis il va détecter les widgets qui ont plus de deux ajout de Listener.
 Puisque le plugin est capable de détecter les ajout de listener, il doit être capable de détecter les ajouts d'autres widgets.
@@ -89,19 +89,19 @@ Cette dernière étape nous sera utile pour migrer correctement les applications
 Cloutier *et al.* [@cloutier2016wavi] ont conçu un outil nommé "Wavi" qui permet d'extraire d'une page web les différents composants.
 Pour cela, l'outil se base sur les fichier html, css et JavaScript.
 L'outil va dans un premier temps construire l'arbre syntaxique du code source du site web.
-Puis il extraire les éléments qui important du fichier html (*i.e.* les hyperliens, formulaires, appel JavaScript, etc. ). 
-Enfin il va relié les éléments de l'étape une et deux.
-Les applications web de Berger-Levrault sont développé en java avec GWT mais une fois compilées sont des
+Puis il extrait les éléments importants du fichier html (*i.e.* les hyperliens, formulaires, appel JavaScript, etc. ). 
+Enfin il va relier les éléments de l'étape une et deux.
+Les applications web de Berger-Levrault sont développées en java avec GWT, mais une fois compilées sont des
   fichiers html, css et JavaScript.
-Toute les conditions semble donc remplit pour pouvoir utilise le travail des auteurs dans notre cas et
+Toutes les conditions semblent donc remplit pour pouvoir utilise le travail des auteurs dans notre cas et
   ainsi extraire l'architecture des applications de Berger-Levrault.
 Ce travail est nécessaire si l'on souhaite conserver la même structure visuelle pendant la migration.
 
 Aho *et al.* [@aho2013industrial] ont développé un logiciel appelé "Murphy".
 Murphy permet d'extraire dynamiquement les widgets d'une application.
-Murphy est compatible avec de nombreux langage de programmation car il utilise des "drivers" qui lui permettent
-  d'interagir avec l'application en cours de fonctionnement grâce à une interface abstraite du language de programmation de l'application.
-Le projet des auteurs se rapprochent du notre puisqu'ils souhaitent extraire l'interface graphique
+Murphy est compatible avec de nombreux langages de programmation car il utilise des "drivers" qui lui permettent
+  d'interagir avec l'application en cours de fonctionnement grâce à une interface abstraite du langage de programmation de l'application.
+Le projet des auteurs se rapprochent du nôtre puisqu'ils souhaitent extraire l'interface graphique
   ce qui est une de nos tâches pour la migration des applications de Berger-Levrault.
 Il nous faudrait cependant trouver comment créer un "driver" qui permettrait à Murphy d'interagir avec une application web.
 
