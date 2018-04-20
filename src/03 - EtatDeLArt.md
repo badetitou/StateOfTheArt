@@ -70,12 +70,21 @@ En modifiant le travail des auteurs, je pourrai le réutiliser dans le cas de l'
 Memon *et al.* [@MemonWCRE2003] ont développé un logiciel nommé "GUI Ripper".
 Cet outil permet d'extraire d'un logiciel java ou MS Windows les différents composants visuels.
 L'outil fait une recherche dynamique des composants instanciés durant l'execution du programme.
-Les auteurs obtiennent un modèle de l'application qu'il vont ensuite pouvoir utiliser pour générer des tests.
+Les auteurs obtiennent un modèle de l'application qu'ils vont ensuite pouvoir utiliser pour générer des tests.
 L'extraction de composants visuels est aussi une tâche importante pour mon projet avec Berger-Levrault.
 Cependant, la recherche dynamique proposée par les auteurs ne semblent pas applicable en l'état dans notre cas
-  puisque nous n'avons pas d'exécution de l'interface mais sa compilation par GWT.
-Cependant, on peut imaginer implémenter l'algorithme de GUI Ripper en Javascript pour extraire les widgets
+  puisque nous n'avons pas d'exécution de l'interface, mais sa compilation par GWT.
+Cependant, on peut imaginer implémenter l'algorithme de GUI Ripper en JavaScript pour extraire les widgets
   pendant l'exécution du script dans le navigateur web.
+
+L'article de Lelli *et al.* [@lelli2016automatic] propose un outil permettant de détecter les composants graphiques pouvant faire plus de deux actions.
+L'outil, qui est une extension d'eclipse, va tout d'abord faire une analyse static du code source.
+Cela lui permet de repérer les différents widgets.
+Puis il va détecter les widgets qui ont plus de deux ajout de Listener.
+Puisque le plugin est capable de détecter les ajout de listener, il doit être capable de détecter les ajouts d'autres widgets.
+Nous pourrions donc modifier le plugin pour qu'il détecte en plus les compositions de widgets afin d'extraire un modèle
+  contenant l'aspect graphique des applications de Berger-Levrault.
+Cette dernière étape nous sera utile pour migrer correctement les applications.
 
 ## Migration de librairie
 
@@ -250,7 +259,7 @@ Ce travail peut nous servir pour la migration des applications de Berger-Levraul
 En effet, nous pouvons imaginer faire la migration de tout ou partie des applications en utilisant un tel outil.
 De plus, on peut imaginer un outil qui apprendrai au fur et à mesure des développement des développeur et qui les
   conseillerez dans un second temps sur d'autre développement avec les même problématiques déjà résolu.
-Ou encore, l'outil pourrait servir de "guide" pour les nouveaux développeurs participants à la migration ou 
+Ou encore, l'outil pourrait servir de "guide" pour les nouveaux développeurs participants à la migration ou
   au développement courant des applications.
 
 Aucun des papiers trouvés et cités ne peut nous aider réellement à migrer le framework BLCore ou les applications si on décide que dans le futur, on supprime BLCore, puisqu'Angular, contrairement à GWT n'est pas du Java.
