@@ -248,5 +248,6 @@ En revanche, si Berger-Levrault souhaite garder l'équivalent de BLCore dans le 
 
 [^api]: API: Interface de programmation
 [^XUL]: XUL: XML-based User interface Language est un langage de description d’interfaces graphiques fondé sur XML créé dans le cadre du projet Mozilla
-[^DSL]: DSL: \todo{toto}
-[^framework]: Framework: \todo{todo}
+[^DSL]: DSL: Domain Specific Language est un langage de programmation destiné à générer des programme dans un domaine spécifique.
+[^framework]: Framework: Ensemble cohérent de composants logiciels structurels, qui sert à créer les fondations ainsi que les grandes lignes de tout ou d’une partie d'un logiciel (architecture).
+[^QVT]: QVT est un langage permettant de définir des transformation de modèle.
