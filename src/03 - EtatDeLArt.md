@@ -67,6 +67,16 @@ Dans le cadre de la migration des applications de Berger-Levrault, l'extraction 
   et leurs relations peut être nécessaire.
 En modifiant le travail des auteurs, je pourrai le réutiliser dans le cas de l'extraction de composant GWT.
 
+Memon *et al.* [@MemonWCRE2003] ont développé un logiciel nommé "GUI Ripper".
+Cet outil permet d'extraire d'un logiciel java ou MS Windows les différents composants visuels.
+L'outil fait une recherche dynamique des composants instanciés durant l'execution du programme.
+Les auteurs obtiennent un modèle de l'application qu'il vont ensuite pouvoir utiliser pour générer des tests.
+L'extraction de composants visuels est aussi une tâche importante pour mon projet avec Berger-Levrault.
+Cependant, la recherche dynamique proposée par les auteurs ne semblent pas applicable en l'état dans notre cas
+  puisque nous n'avons pas d'exécution de l'interface mais sa compilation par GWT.
+Cependant, on peut imaginer implémenter l'algorithme de GUI Ripper en Javascript pour extraire les widgets
+  pendant l'exécution du script dans le navigateur web.
+
 ## Migration de librairie
 
 La _migration de librairie_ présente des solutions sur comment changer de framework.
