@@ -50,6 +50,15 @@ Ce travail se rapproche de celui que nous devons effectuer pour la migration des
 Extraire l'interface graphique pour ensuite la migrer fait aussi partie des tâches essentielles de notre migration.
 Le modèle représentant l'interface graphique utilisé par les auteurs peut être un point de départ à notre travail d'extraction.
 
+Silvia *et al.* [@silva2010guisurfer] ont créé un logiciel nommé "GUISurfer".
+Ce logiciel permet d'extraire une interface graphique d'un code source et de le convertir en un modèle.
+Le code source peut être du java avec le framework[^framework] Swing.
+GUISurfer parcourt l'AST[^ast] de l'application source pour détecter les composants qu'on lui donnés en paramètre.
+On peut donc avoir en sortie un modèle complet de l'interface graphique ou ne contenant que les actions (entrée, clique, etc.).
+L'article précise qu'un travail sur l'extraction d'interface GWT est en cours.
+Pour la migration des application de Berger-Levrault, je vais devoir extraire l'interface graphique des applications écrites avec GWT.
+Le logiciel "GUISurfer" peut peut-être me permettre d'extraire un modèle de l'interface, dans un premier temps sans les spécificités de Berger-Levrault.
+
 ## Migration de librairie
 
 La _migration de librairie_ présente des solutions sur comment changer de framework.
@@ -113,19 +122,6 @@ Avec ces informations, ils ont pu mettre en relation des langages et leurs libra
 Pour la migration de Java/GWT vers Angular, il est possible que nous ayons besoin de changer de librairie (qui n'est pas BLCore).
 Plutôt que de récrire la librairie, la recherche d'une autre librairie permettant de résoudre les même problème peut être une solution.
 C'est dans ce contexte que le travail des auteurs peut guider notre recherche de librairie en mettant faisant correspondre les anciennes librairies utilisées par les applications de Berger-Levrault avec d'autre compatible utilisable avec Angular.
-
-## Transformation de texte vers modèle
-
-La _transformation de texte vers modèle_ (Reverse Engineering), présente les travaux traitant du passage de code source d'application vers un modèle.
-
-Silvia *et al.* [@silva2010guisurfer] ont créé un logiciel nommé "GUISurfer".
-Ce logiciel permet d'extraire une interface graphique d'un code source et de le convertir en un modèle.
-Le code source peut être du java avec le framework[^framework] Swing.
-GUISurfer parcourt l'AST[^ast] de l'application source pour détecter les composants qu'on lui donnés en paramètre.
-On peut donc avoir en sortie un modèle complet de l'interface graphique ou ne contenant que les actions (entrée, clique, etc.).
-L'article précise qu'un travail sur l'extraction d'interface GWT est en cours.
-Pour la migration des application de Berger-Levrault, je vais devoir extraire l'interface graphique des applications écrites avec GWT.
-Le logiciel "GUISurfer" peut peut-être me permettre d'extraire un modèle de l'interface, dans un premier temps sans les spécificités de Berger-Levrault.
 
 ## Transformation de modèle vers modèle
 
