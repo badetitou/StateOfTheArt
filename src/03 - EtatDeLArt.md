@@ -97,6 +97,14 @@ Toute les conditions semble donc remplit pour pouvoir utilise le travail des aut
   ainsi extraire l'architecture des applications de Berger-Levrault.
 Ce travail est nécessaire si l'on souhaite conserver la même structure visuelle pendant la migration.
 
+Aho *et al.* [@aho2013industrial] ont développé un logiciel appelé "Murphy".
+Murphy permet d'extraire dynamiquement les widgets d'une application.
+Murphy est compatible avec de nombreux langage de programmation car il utilise des "drivers" qui lui permettent
+  d'interagir avec l'application en cours de fonctionnement grâce à une interface abstraite du language de programmation de l'application.
+Le projet des auteurs se rapprochent du notre puisqu'ils souhaitent extraire l'interface graphique
+  ce qui est une de nos tâches pour la migration des applications de Berger-Levrault.
+Il nous faudrait cependant trouver comment créer un "driver" qui permettrait à Murphy d'interagir avec une application web.
+
 ## Migration de librairie
 
 La _migration de librairie_ présente des solutions sur comment changer de framework.
