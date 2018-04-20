@@ -86,6 +86,17 @@ Nous pourrions donc modifier le plugin pour qu'il détecte en plus les compositi
   contenant l'aspect graphique des applications de Berger-Levrault.
 Cette dernière étape nous sera utile pour migrer correctement les applications.
 
+Cloutier *et al.* [@cloutier2016wavi] ont conçu un outil nommé "Wavi" qui permet d'extraire d'une page web les différents composants.
+Pour cela, l'outil se base sur les fichier html, css et JavaScript.
+L'outil va dans un premier temps construire l'arbre syntaxique du code source du site web.
+Puis il extraire les éléments qui important du fichier html (*i.e.* les hyperliens, formulaires, appel JavaScript, etc. ). 
+Enfin il va relié les éléments de l'étape une et deux.
+Les applications web de Berger-Levrault sont développé en java avec GWT mais une fois compilées sont des
+  fichiers html, css et JavaScript.
+Toute les conditions semble donc remplit pour pouvoir utilise le travail des auteurs dans notre cas et
+  ainsi extraire l'architecture des applications de Berger-Levrault.
+Ce travail est nécessaire si l'on souhaite conserver la même structure visuelle pendant la migration.
+
 ## Migration de librairie
 
 La _migration de librairie_ présente des solutions sur comment changer de framework.
